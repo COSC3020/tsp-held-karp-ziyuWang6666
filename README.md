@@ -47,3 +47,22 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+
+
+### Answer
+
+The total worst-case asymptotic time complexity of implementation is O(n!+ n*logn).
+
+1. tsp_hk function exists sorting cities and has a worst-case time complexity of O( n*logn).
+
+2. The tsp function is operating a recursive call to explore all possible paths. The worst-case time complexity of O(n!), n is the number of cities.
+
+
+The algorithm's memory complexity is O(n!) at worst-case.
+
+When using the tsp function, it computes possible paths for each node with different combinations each time. Avoid repeat computations, the results are stored in the cache. If the cache already contains the results computed before, the program uses the cached value instead of recomputing. However, due to each node having unique numbers of subroutes, in the worst-case scenario, the program may need to go through each node n! times which can result in increased time complexity.
+
+
+
+
