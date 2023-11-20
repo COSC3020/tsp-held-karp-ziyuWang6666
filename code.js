@@ -11,7 +11,6 @@ function tsp_hk(dm) {
         // remove start = parseInt(start) because right now items are integer.
         // no need compare Infinity to sumDist since already compared in tsp function
         // just return value
-        cache = {}
         sumDist = tsp(cities, start, dm, cache)
     }
     return sumDist;
@@ -21,7 +20,6 @@ function tsp_hk(dm) {
   {
       if (cities.length === 1) 
       {
-          cache = {}
           return dm[start][cities[0]];
       }
       else
