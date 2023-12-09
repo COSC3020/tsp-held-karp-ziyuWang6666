@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12590857&assignment_repo_type=AssignmentRepo)
 # Traveling Salesperson Problem -- Held-Karp Algorithm
 
 This exercise is about the Traveling Salesperson Problem I mentioned in the
@@ -46,3 +47,20 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+
+
+### Answer
+
+The total worst-case asymptotic time complexity of implementation is 	$O(n^2*2^n)$.
+
+1. tsp_hk function exists sorting cities and has a worst-case time complexity of O( n*logn).
+
+2. The tsp function operates a recursive call to explore all possible paths but uses a cache to avoid recomputing the same sub cities multiple times. Using cache list in tsp function reduces worst-case time complexity from $O(n!)$ to $O(2^n)$ because for each city, either include that city in the current subset cities or not included. Since it will go through all cities at least once, the time complexity goes to $O(n*2^n)$, n is the number of cities.
+
+By combining tsp_hk and tsp functions, since the tsp function is inside the for loop of the tsp_hk function, the total worst-case time complexity is $O(n^2*2^n)$.
+
+
+
+
+
